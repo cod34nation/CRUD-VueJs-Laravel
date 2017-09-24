@@ -1,48 +1,47 @@
-
-
-@extends('Layout')
+@extends('layout')
 
 @section('content')
-<div id="UserController" style="padding-top: 2em">
-
-<div class="alert alert-danger" v-if="!isValid">
 	
-	<ul>
-		<li v-show="!validation.name">Name field is required</li>
-		<li v-show="!validation.email">Input valid email address</li>
-		<li v-show="!validation.address">address field is required</li>
-	</ul>
-</div>
-
-<form action="#" @submit.prevent="AddNewUser">
-	
-	<div class="form-group">
+	<div id="UserController" style="padding-top: 2em">
 		
-		<label for="name"> Name :</label>
-		<input v-model ="newUser.name" type="text" name="name" id="name" class="form-control" >
-     
-	</div>
+		<div class="alert alert-danger" v-if="!isValid">
+			<ul>
+				<li v-show="!validation.name">Name field is required.</li>
+				<li v-show="!validation.email">Input a valid email address.</li>
+				<li v-show="!validation.address">Address field is required.</li>
+			</ul>
+		</div>
 
-	<div class="form-group">
+		<form action="#" @submit.prevent="AddNewUser" method="POST">
+			
+			<div class="form-group">
+				<label for="name">Name:</label>
+				<input v-model="newUser.name" type="text" id="name" name="name" class="form-control">
+			</div>
+
+			<div class="form-group">
+				<label for="email">Email:</label>
+				<input v-model="newUser.email" type="text" id="email" name="email" class="form-control">
+			</div>
+
+			<div class="form-group">
+				<label for="address">Address:</label>
+				<input v-model="newUser.address" type="text" id="address" name="address" class="form-control">
+			</div>
+
+			<div class="form-group">
+				<button :disabled="!isValid" class="btn btn-default" type="submit" v-if="!edit">Add New User</button>
+
+				<button :disabled="!isValid" class="btn btn-default" type="submit" v-if="edit" @click="EditUser(newUser.id)">Edit User</button>
+			</div>
+
+		</form>
 		
-		<label for="email"> Email:</label>
-		<input v-model ="newUser.email" type="text" name="email" id="email" class="form-control" >
+		<div class="alert alert-success" transition="success" v-if="success">Add new user successful.</div>
 
-	</div>
+		<hr>
 
-	<div class="form-group">
-		
-		<label for="name"> Address :</label>
-		<input v-model ="newUser.address" type="text" name="address" id="addrees" class="form-control">
-
-	</div>
-
-	<div class="form-group">
-		<button :disabled="!isValid" class="btn btn-primary" class="form-control" type="submit">Add New User</button>
-	</div>
-</form>
-	
-<table class="table">
+		<table class="table">
 			<thead>
 				<th>ID</th>
 				<th>NAME</th>
@@ -67,12 +66,21 @@
 					</td>
 				</tr>
 			</tbody>
-			
-</table>
+		</table>
 
-</div>
+	</div>
+
 @endsection
 
 @push('scripts')
-<script src ="/js/script.js"></script>
+	<script src="/js/script.js"></script>
+
+	<style>
+	.success-transition {
+		transition: all .5s ease-in-out;
+	}
+	.success-enter, .success-leave {
+		opacity: 0;
+	}
+	</style>
 @endpush
