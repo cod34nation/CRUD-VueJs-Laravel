@@ -1,0 +1,188 @@
+
+AFRIZAL@AFRIZAL-PC MINGW64 /c/Program Files (x86)/xampp/htdocs/CRUD-VueJs-Laravel/crud-vuejs (master)
+$ php artisan migrate
+Migration table created successfully.
+
+
+  [Illuminate\Database\QueryException]
+  SQLSTATE[42000]: Syntax error or access violation: 1071 Specified key was t
+  oo long; max key length is 767 bytes (SQL: alter table `users` add unique `
+  users_email_unique`(`email`))
+
+
+
+  [PDOException]
+  SQLSTATE[42000]: Syntax error or access violation: 1071 Specified key was t
+  oo long; max key length is 767 bytes
+
+
+
+AFRIZAL@AFRIZAL-PC MINGW64 /c/Program Files (x86)/xampp/htdocs/CRUD-VueJs-Laravel/crud-vuejs (master)
+$ php artisan migrate
+PHP Fatal error:  Cannot redeclare App\Providers\AppServiceProvider::boot() in C
+:\Program Files (x86)\xampp\htdocs\CRUD-VueJs-Laravel\crud-vuejs\app\Providers\A
+ppServiceProvider.php on line 19
+
+
+  [Symfony\Component\Debug\Exception\FatalErrorException]
+  Cannot redeclare App\Providers\AppServiceProvider::boot()
+
+
+
+AFRIZAL@AFRIZAL-PC MINGW64 /c/Program Files (x86)/xampp/htdocs/CRUD-VueJs-Laravel/crud-vuejs (master)
+$ php artisan migrate
+PHP Fatal error:  Cannot redeclare App\Providers\AppServiceProvider::boot() in C
+:\Program Files (x86)\xampp\htdocs\CRUD-VueJs-Laravel\crud-vuejs\app\Providers\A
+ppServiceProvider.php on line 20
+
+
+  [Symfony\Component\Debug\Exception\FatalErrorException]
+  Cannot redeclare App\Providers\AppServiceProvider::boot()
+
+
+
+AFRIZAL@AFRIZAL-PC MINGW64 /c/Program Files (x86)/xampp/htdocs/CRUD-VueJs-Laravel/crud-vuejs (master)
+$ php artisan migrate
+
+
+  [Illuminate\Database\QueryException]
+  SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' alre
+  ady exists (SQL: create table `users` (`id` int unsigned not null auto_incr
+  ement primary key, `name` varchar(191) not null, `email` varchar(191) not n
+  ull, `address` varchar(191) not null, `created_at` timestamp null, `updated
+  _at` timestamp null) default character set utf8mb4 collate utf8mb4_unicode_
+  ci)
+
+
+
+  [PDOException]
+  SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'users' alre
+  ady exists
+
+
+
+AFRIZAL@AFRIZAL-PC MINGW64 /c/Program Files (x86)/xampp/htdocs/CRUD-VueJs-Laravel/crud-vuejs (master)
+$ php artisan migrate
+Migration table created successfully.
+Migrating: 2014_10_12_000000_create_users_table
+Migrated:  2014_10_12_000000_create_users_table
+
+AFRIZAL@AFRIZAL-PC MINGW64 /c/Program Files (x86)/xampp/htdocs/CRUD-VueJs-Laravel/crud-vuejs (master)
+$ php artisan tinker
+Psy Shell v0.8.11 (PHP 7.1.9 — cli) by Justin Hileman
+>>> factory('App\User',10)->create();
+=> Illuminate\Database\Eloquent\Collection {#767
+     all: [
+       App\User {#763
+         name: "Mr. Hilton Schroeder",
+         email: "jefferey34@example.com",
+         address: """
+           541 Jamel Centers Suite 330\n
+           East Greta, MO 06857
+           """,
+         updated_at: "2017-09-24 07:38:23",
+         created_at: "2017-09-24 07:38:23",
+         id: 1,
+       },
+       App\User {#759
+         name: "Florida Sanford Jr.",
+         email: "merle.okuneva@example.com",
+         address: """
+           9317 Heidenreich Prairie Apt. 182\n
+           New Alisatown, TX 92311-4563
+           """,
+         updated_at: "2017-09-24 07:38:23",
+         created_at: "2017-09-24 07:38:23",
+         id: 2,
+       },
+       App\User {#758
+         name: "Erling Rowe",
+         email: "arjun.emmerich@example.org",
+         address: """
+           4941 Runolfsdottir View\n
+           Aufderharchester, NC 95871-2010
+           """,
+         updated_at: "2017-09-24 07:38:23",
+         created_at: "2017-09-24 07:38:23",
+         id: 3,
+       },
+       App\User {#760
+         name: "Rocky Rau",
+         email: "pschneider@example.org",
+         address: """
+           7546 Schuster Isle\n
+           East Zakary, SD 65284-2048
+           """,
+         updated_at: "2017-09-24 07:38:23",
+         created_at: "2017-09-24 07:38:23",
+         id: 4,
+       },
+       App\User {#762
+         name: "Richie Pouros",
+         email: "mavis.hettinger@example.com",
+         address: """
+           7722 Muller Island Suite 360\n
+           Lake Sigmund, NH 50119
+           """,
+         updated_at: "2017-09-24 07:38:24",
+         created_at: "2017-09-24 07:38:24",
+         id: 5,
+       },
+       App\User {#764
+         name: "Maybell Kautzer",
+         email: "rmraz@example.net",
+         address: """
+           304 Spencer Ramp\n
+           Jackieton, CT 44473
+           """,
+         updated_at: "2017-09-24 07:38:24",
+         created_at: "2017-09-24 07:38:24",
+         id: 6,
+       },
+       App\User {#766
+         name: "Dr. Selmer Heller",
+         email: "mmcdermott@example.com",
+         address: """
+           15722 Laila Crescent Apt. 088\n
+           West Adam, FL 62175
+           """,
+         updated_at: "2017-09-24 07:38:24",
+         created_at: "2017-09-24 07:38:24",
+         id: 7,
+       },
+       App\User {#768
+         name: "Prof. Leland West",
+         email: "judah.rohan@example.com",
+         address: """
+           585 Buster Locks Suite 503\n
+           South Lelah, IA 81009-3460
+           """,
+         updated_at: "2017-09-24 07:38:24",
+         created_at: "2017-09-24 07:38:24",
+         id: 8,
+       },
+       App\User {#771
+         name: "Mr. Salvador Conroy V",
+         email: "maynard.cremin@example.net",
+         address: """
+           5874 Kelli Loaf Apt. 431\n
+           New Aletha, VT 66298-2972
+           """,
+         updated_at: "2017-09-24 07:38:24",
+         created_at: "2017-09-24 07:38:24",
+         id: 9,
+       },
+       App\User {#772
+         name: "Mr. Geovanny Medhurst",
+         email: "hoeger.rozella@example.com",
+         address: """
+           8752 Maximillia Groves\n
+           Adolphusport, NJ 70064-3290
+           """,
+         updated_at: "2017-09-24 07:38:24",
+         created_at: "2017-09-24 07:38:24",
+         id: 10,
+       },
+     ],
+   }
+>>>
